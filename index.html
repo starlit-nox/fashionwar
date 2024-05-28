@@ -4,23 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fashion War</title>
+    <link rel="stylesheet" href="index.css">
     <style>
-        body {
+        .carousel {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            display: flex; /* Use flexbox for horizontal alignment */
+        }
+
+        .slide {
+            flex: 0 0 auto; /* Prevent flex items from growing */
+            width: 200px; /* Set the width of each slide */
+            height: 400px; /* Set the height of each slide */
+            margin: 0 5px; /* Add some margin for spacing between slides */
+        }
+
+        .image-row {
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+            flex-wrap: wrap;
+            overflow-x: auto; /* Enable horizontal scrolling for image row */
+            white-space: nowrap; /* Prevent wrapping of images */
+            -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+            scrollbar-width: none; /* Hide scrollbar on Firefox */
+            -ms-overflow-style: none; /* Hide scrollbar on IE and Edge */
         }
-        h1, iframe {
+
+        .image-row::-webkit-scrollbar {
+            display: none; /* Hide scrollbar on WebKit browsers */
+        }
+
+        .categories-image-container {
+            margin: 10px;
             text-align: center;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .categories-image-container img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .categories-image-container h2 {
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <div>
+    <div class="container">
         <h1>Fashion War</h1>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/q6EoRBvdVPQ?si=XvCQClCI2iMRSlJ5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
+
+    <!-- This is for the carousel -->
+    <div class="carousel">
+        <div class="slide"><img src="https://img.freepik.com/premium-photo/cat-wearing-blue-shirt-that-says-cat-it_933706-527.jpg?w=826" alt="Slide 1"></div>
+        <div class="slide"><img src="https://img.freepik.com/premium-photo/portrait-cat-sunglasses-with-sea-reflection-isolated-white-background_416511-1936.jpg?w=996" alt="Slide 2"></div>
+        <div class="slide"><img src="https://img.kwcdn.com/product/1d14c6c1222/1b0a94d7-c013-48cd-80dc-67eaf7794234_1600x1600.jpeg?imageView2/2/w/800/q/70/format/webp" alt="Slide 3"></div>
+        <!-- Add more slides here -->
+    </div>
+    <!-- End of the carousel -->
+
+    <!-- This is for the five categories -->
+
+    <div class="image-row">
+        <a href="tops.html" class="categories-image-container">
+            <img src="https://i.pinimg.com/564x/56/da/38/56da38304bc14602b0c0d441b40cc2a3.jpg" alt="Tops">
+            <h2>Tops</h2>
+        </a>
+        <a href="bottom.html" class="categories-image-container">
+            <img src="https://i.pinimg.com/564x/56/da/38/56da38304bc14602b0c0d441b40cc2a3.jpg" alt="Bottom">
+            <h2>Bottom</h2>
+        </a>
+        <a href="shoes.html" class="categories-image-container">
+            <img src="https://i.pinimg.com/564x/56/da/38/56da38304bc14602b0c0d441b40cc2a3.jpg" alt="Shoes">
+            <h2>Shoes</h2>
+        </a>
+        <a href="accessories.html" class="categories-image-container">
+            <img src="https://i.pinimg.com/564x/56/da/38/56da38304bc14602b0c0d441b40cc2a3.jpg" alt="Accessories">
+            <h2>Accessories</h2>
+        </a>
+        <a href="outerwear.html" class="categories-image-container">
+            <img src="https://i.pinimg.com/564x/56/da/38/56da38304bc14602b0c0d441b40cc2a3.jpg" alt="Outer Wear">
+            <h2>Outer Wear</h2>
+        </a>
+    </div>
+
+    <!-- End of the five categories -->
+
 </body>
 </html>
